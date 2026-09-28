@@ -1,1 +1,13 @@
+const form = document.getElementById("form");
 
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const year = document.getElementById("year").value;
+
+    const url = document.getElementById("url");
+
+    url.textContent =
+        `https://localhost:8080/?name=${encodeURIComponent(name)}&year=${year}`;
+});
